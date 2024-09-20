@@ -46,8 +46,6 @@ public class ProcessRest {
     @Autowired
     private ProcessService processService;
 
-    private final String apiKeyValue = "cDZHYzlZa0JadVREZDJCendQbXY6SkJlTzNjLV9TRENyQk1RdnFKZGRQdw==";
-
     @PostMapping("/processQuery")
     public List<Process> queryProcesses(@RequestBody(required = false) Map<String, String> filters)
             throws ParseException {

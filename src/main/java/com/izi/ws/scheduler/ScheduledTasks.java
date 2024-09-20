@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 import javax.management.Notification;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -47,7 +48,8 @@ public class ScheduledTasks {
     @Autowired
     private ComplementService complementService;
 
-    private final String apiKey = "cDZHYzlZa0JadVREZDJCendQbXY6SkJlTzNjLV9TRENyQk1RdnFKZGRQdw==";
+    @Value("${apiKey}")
+    private String apiKey;
 
     public void executeScheduledTaskMonitorProcess() {
         List<Process> processes = processService.findByMonitorIndicator();
